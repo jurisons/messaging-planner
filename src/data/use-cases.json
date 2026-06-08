@@ -1,0 +1,34 @@
+{
+  "marketing": {
+    "id": "marketing",
+    "label": "Marketing",
+    "icon": "📣",
+    "description": "Promotional campaigns, offers, announcements",
+    "preferred_channels_order": ["whatsapp", "sms", "rcs"],
+    "requires_double_optin": ["DE"]
+  },
+  "otp": {
+    "id": "otp",
+    "label": "OTP / Auth",
+    "icon": "🔐",
+    "description": "One-time passwords, 2FA, login verification",
+    "preferred_channels_order": ["sms", "whatsapp", "rcs"],
+    "requires_double_optin": []
+  },
+  "alerts": {
+    "id": "alerts",
+    "label": "Alerts",
+    "icon": "🔔",
+    "description": "Transactional alerts, order updates, notifications",
+    "preferred_channels_order": ["sms", "rcs", "whatsapp"],
+    "requires_double_optin": []
+  },
+  "support": {
+    "id": "support",
+    "label": "Support",
+    "icon": "💬",
+    "description": "Customer service, conversational messaging",
+    "preferred_channels_order": ["whatsapp", "rcs", "sms"],
+    "requires_double_optin": []
+  }
+}

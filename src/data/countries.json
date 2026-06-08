@@ -1,0 +1,993 @@
+{
+  "DE": {
+    "name": "Germany",
+    "flag": "🇩🇪",
+    "region": "Europe",
+    "population": 84,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "alerts", "marketing"],
+        "sender_types": ["alphanumeric", "shortcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": false,
+        "shortcode_supported": true,
+        "registration_required": true,
+        "registration_body": "Bundesnetzagentur (BNetzA)",
+        "registration_timeline_days": [14, 30],
+        "cost_per_message_usd": [0.065, 0.09],
+        "notes": [
+          "Alphanumeric sender ID widely supported — your brand name is the sender",
+          "No long codes available — use alphanumeric or shortcode",
+          "Content must comply with UWG (Unfair Competition Act)",
+          "Opt-in must be double opt-in (DOI) for marketing"
+        ],
+        "gotchas": [
+          "Marketing SMS allowed Mon–Sat 07:00–21:00 only — outside hours messages may be filtered",
+          "URL shorteners (bit.ly etc.) increasingly blocked by carriers — use your own domain",
+          "GDPR consent records must be stored and producible on request"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["marketing", "support", "otp"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 14],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": [
+          "WhatsApp penetration in Germany is very high (~80% of smartphone users)",
+          "BSP (Business Solution Provider) required — e.g. Messente",
+          "Marketing templates must be pre-approved by Meta",
+          "24-hour customer service window for replies"
+        ],
+        "gotchas": [
+          "Meta can reject templates without detailed explanation — build buffer time",
+          "German users have high privacy expectations — generic marketing copy performs poorly",
+          "Phone number must be verified and cannot be used simultaneously in WhatsApp app"
+        ]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing", "alerts"],
+        "registration_required": true,
+        "registration_body": "Google RBM + Carrier verification",
+        "registration_timeline_days": [14, 45],
+        "cost_per_message_usd": [0.04, 0.08],
+        "notes": [
+          "Strong carrier support: Deutsche Telekom, Vodafone DE, O2 all support RCS",
+          "Verified sender badge builds strong brand trust",
+          "Rich cards and carousels supported"
+        ],
+        "gotchas": [
+          "Android-only until full cross-platform adoption — SMS fallback essential",
+          "Agent (sender) registration involves Google + each carrier — timeline varies"
+        ]
+      }
+    },
+    "compliance": {
+      "framework": "GDPR + TTDSG + UWG",
+      "opt_in_required": true,
+      "opt_in_type": "explicit_double",
+      "opt_out_keyword": "STOP",
+      "data_residency": "EU preferred",
+      "regulator": "BNetzA + BfDI"
+    },
+    "market_notes": "Germany is one of Europe's largest messaging markets. WhatsApp is dominant for personal use. Germans are privacy-conscious — personalised, relevant messaging outperforms broadcast. Double opt-in is legally expected, not optional."
+  },
+
+  "FR": {
+    "name": "France",
+    "flag": "🇫🇷",
+    "region": "Europe",
+    "population": 68,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "alerts", "marketing"],
+        "sender_types": ["alphanumeric", "shortcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": false,
+        "shortcode_supported": true,
+        "registration_required": true,
+        "registration_body": "ARCEP + Carrier registration (OACP)",
+        "registration_timeline_days": [21, 60],
+        "cost_per_message_usd": [0.065, 0.085],
+        "notes": [
+          "No long codes — alphanumeric or shortcodes only",
+          "Shortcodes have minimum 3-month term, 3-month notice to return",
+          "OACP (Operateur d'Acces au Contenu et aux Services de Proximité) registration required for shortcodes",
+          "STOP must be written in French: 'STOP' keyword required, CONTACT keyword must return company name + support"
+        ],
+        "gotchas": [
+          "Marketing SMS BLOCKED on Sundays, public holidays, and after 22:00 — messages queued, not dropped",
+          "URL shorteners (bit.ly, tinyurl) strictly FORBIDDEN by ARCEP — use your own branded short domain",
+          "Carrier freeze periods in August and December — no new registrations processed",
+          "Inactive shortcodes (30 days no traffic) risk withdrawal by carrier"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["support", "marketing"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 14],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": [
+          "WhatsApp used by ~60% of French smartphone users",
+          "GDPR applies — explicit consent required"
+        ],
+        "gotchas": [
+          "French consumers use WhatsApp less than Germany or Spain — SMS/RCS often higher reach",
+          "Avoid registering numbers during August — carrier and Meta support slows significantly"
+        ]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing", "alerts"],
+        "registration_required": true,
+        "registration_body": "Google RBM + Orange/SFR/Bouygues",
+        "registration_timeline_days": [21, 60],
+        "cost_per_message_usd": [0.05, 0.09],
+        "notes": [
+          "Orange reported 400% RCS traffic increase in 2024",
+          "Strong carrier RCS support across all major French operators"
+        ],
+        "gotchas": [
+          "RCS sending time restrictions mirror SMS rules — no Sunday/holiday marketing",
+          "Agent registration through French carriers adds time vs other EU markets"
+        ]
+      }
+    },
+    "compliance": {
+      "framework": "GDPR + LCEN + Code de la Consommation",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "EU required",
+      "regulator": "CNIL + ARCEP"
+    },
+    "market_notes": "France has strict SMS timing rules and unique registration bureaucracy. Plan for August and December freezes. URL shorteners are banned — this catches almost everyone. Budget 6–8 weeks for full shortcode setup."
+  },
+
+  "PL": {
+    "name": "Poland",
+    "flag": "🇵🇱",
+    "region": "Europe",
+    "population": 38,
+    "gdp_tier": "medium",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "marketing", "alerts"],
+        "sender_types": ["alphanumeric", "longcode", "shortcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": true,
+        "shortcode_supported": true,
+        "registration_required": false,
+        "registration_timeline_days": [1, 7],
+        "cost_per_message_usd": [0.04, 0.065],
+        "notes": [
+          "One of the more accessible EU markets — no mandatory pre-registration for alphanumeric",
+          "Long codes available, unlike France/Germany",
+          "GDPR applies — consent records required"
+        ],
+        "gotchas": [
+          "Polish carriers increasingly filter unregistered alphanumeric IDs — voluntary registration recommended",
+          "Marketing hours: weekdays 06:00–22:00, weekends 08:00–22:00",
+          "Polish consumers have low spam tolerance — high unsubscribe rates if messaging is not relevant"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["support", "marketing"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 10],
+        "cost_per_message_usd": [0.015, 0.022],
+        "notes": [
+          "WhatsApp widely used in Poland — strong alternative to SMS for marketing"
+        ],
+        "gotchas": [
+          "Template approval can be slow for Polish-language templates — submit early"
+        ]
+      },
+      "rcs": {
+        "available": false,
+        "notes": ["RCS not yet widely supported by Polish carriers as of 2025 — check for updates"],
+        "gotchas": ["Do not plan RCS campaigns in Poland without verifying carrier support"]
+      }
+    },
+    "compliance": {
+      "framework": "GDPR + Prawo Telekomunikacyjne",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "EU required",
+      "regulator": "UKE + UODO"
+    },
+    "market_notes": "Poland is one of the most accessible EU markets for SMS. Relatively lower costs, good deliverability. RCS is immature — SMS and WhatsApp are the channels to focus on."
+  },
+
+  "GB": {
+    "name": "United Kingdom",
+    "flag": "🇬🇧",
+    "region": "Europe",
+    "population": 67,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "marketing", "alerts"],
+        "sender_types": ["alphanumeric", "shortcode", "longcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": true,
+        "shortcode_supported": true,
+        "registration_required": true,
+        "registration_body": "Mobile Network Operators + KYC bundle",
+        "registration_timeline_days": [7, 21],
+        "cost_per_message_usd": [0.04, 0.065],
+        "notes": [
+          "All UK long codes require an approved RC (Regulatory Compliance) bundle and KYC since May 2024",
+          "International long codes to UK numbers are universally blocked since mid-2024",
+          "Alphanumeric sender ID well-supported for one-way traffic"
+        ],
+        "gotchas": [
+          "CRITICAL: International long codes (non-UK numbers) are BLOCKED — must use UK-local number or alphanumeric",
+          "RC bundle approval required before purchasing new UK numbers — budget 1–2 weeks",
+          "ICO registration required if processing personal data — £52/year fee",
+          "PECR (Privacy and Electronic Communications Regulations) applies on top of UK GDPR"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["support", "marketing"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 14],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": [
+          "WhatsApp used by ~60% of UK adults",
+          "Strong channel for customer support and transactional messages"
+        ],
+        "gotchas": [
+          "UK users can be skeptical of WhatsApp business messages — trust-building copy is essential"
+        ]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing", "alerts"],
+        "registration_required": true,
+        "registration_body": "Google RBM + EE/Vodafone/O2/Three",
+        "registration_timeline_days": [14, 30],
+        "cost_per_message_usd": [0.04, 0.07],
+        "notes": [
+          "UK has strong RCS carrier support across all four major networks",
+          "Verified sender builds trust in a market concerned about fraud"
+        ],
+        "gotchas": [
+          "Ofcom anti-fraud rules mean strict template review — avoid anything that looks like a bank alert without verification"
+        ]
+      }
+    },
+    "compliance": {
+      "framework": "UK GDPR + PECR + ICO guidance",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "UK (post-Brexit adequacy decision)",
+      "regulator": "ICO + Ofcom"
+    },
+    "market_notes": "Post-Brexit the UK maintains GDPR-equivalent rules via UK GDPR. The big gotcha is the international long code block — almost every new sender gets caught by this. RCS is mature and a good choice for brand-safety-conscious UK enterprises."
+  },
+
+  "US": {
+    "name": "United States",
+    "flag": "🇺🇸",
+    "region": "Americas",
+    "population": 335,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "marketing", "alerts"],
+        "sender_types": ["10dlc", "shortcode", "tollfree"],
+        "alphanumeric_supported": false,
+        "longcode_supported": true,
+        "shortcode_supported": true,
+        "registration_required": true,
+        "registration_body": "The Campaign Registry (TCR) + Carrier vetting",
+        "registration_timeline_days": [3, 21],
+        "cost_per_message_usd": [0.01, 0.03],
+        "notes": [
+          "Alphanumeric sender IDs NOT supported in the US — use 10DLC, toll-free, or shortcode",
+          "10DLC (10-Digit Long Code) is the standard for A2P: register brand + campaign on TCR",
+          "Toll-free numbers require separate verification — good for low-to-medium volume",
+          "Shortcodes cost $500–$1000/month but highest throughput and deliverability"
+        ],
+        "gotchas": [
+          "SHAFT content (Sex, Hate, Alcohol, Firearms, Tobacco) will get your entire campaign binding blocked — no exceptions",
+          "TCPA violations carry $500–$1500 per unsolicited message — class action risk is real",
+          "TCR registration does not guarantee delivery — carrier-level vetting is separate",
+          "Artificially slow traffic if sending at high volume — carriers enforce throughput limits per 10DLC"
+        ]
+      },
+      "whatsapp": {
+        "available": false,
+        "notes": [
+          "Meta PAUSED marketing-category WhatsApp messages to US phone numbers since April 1 2025",
+          "Utility and authentication templates still work for US numbers",
+          "Do not build a US marketing campaign on WhatsApp — use SMS or RCS"
+        ],
+        "gotchas": [
+          "This pause may be permanent or extended — do not plan around WhatsApp for US marketing"
+        ]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing", "alerts"],
+        "registration_required": true,
+        "registration_body": "Google RBM",
+        "registration_timeline_days": [14, 45],
+        "cost_per_message_usd": [0.02, 0.05],
+        "notes": [
+          "Apple added RCS support in iOS 18 — US market now has near-universal RCS reach",
+          "AT&T, Verizon, T-Mobile all support RCS",
+          "Strong alternative to WhatsApp for US marketing given Meta pause"
+        ],
+        "gotchas": [
+          "RCS agent registration involves Google review + carrier approval — budget 4–6 weeks",
+          "No SHAFT content rules carry over to RCS — same content restrictions apply"
+        ]
+      }
+    },
+    "compliance": {
+      "framework": "TCPA + CAN-SPAM + State laws (CCPA for CA)",
+      "opt_in_required": true,
+      "opt_in_type": "express_written",
+      "opt_out_keyword": "STOP",
+      "data_residency": "US preferred, state laws vary",
+      "regulator": "FCC + FTC + State AGs"
+    },
+    "market_notes": "The US is the highest-volume market but most legally complex. TCPA class actions are a real business risk. Never send without express written consent. 10DLC is mandatory for A2P. WhatsApp marketing is currently blocked for US numbers — plan for SMS + RCS."
+  },
+
+  "IN": {
+    "name": "India",
+    "flag": "🇮🇳",
+    "region": "Asia",
+    "population": 1428,
+    "gdp_tier": "medium",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "alerts", "marketing"],
+        "sender_types": ["alphanumeric"],
+        "alphanumeric_supported": true,
+        "longcode_supported": false,
+        "shortcode_supported": false,
+        "registration_required": true,
+        "registration_body": "TRAI DLT (Distributed Ledger Technology) Platform",
+        "registration_timeline_days": [7, 21],
+        "cost_per_message_usd": [0.005, 0.015],
+        "notes": [
+          "TRAI DLT registration is MANDATORY — all entities, headers, and templates must be pre-registered",
+          "Register on one of: JioConnect, Vodafone DLT, Airtel DLT, or BSNL DLT",
+          "Every single message template must be pre-approved — no ad hoc messages",
+          "Three content categories: transactional, promotional, service"
+        ],
+        "gotchas": [
+          "DLT registration is the most complex in Asia — budget 2–3 weeks minimum",
+          "Promotional SMS blocked 21:00–09:00 daily, no exceptions",
+          "National Do Not Disturb (NDNC) registry must be checked — violations carry heavy fines",
+          "Template modifications require re-approval — build this buffer into campaign planning",
+          "Commercial messages restricted to specific time windows per TRAI rules"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["marketing", "support", "otp"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [5, 14],
+        "cost_per_message_usd": [0.008, 0.015],
+        "notes": [
+          "WhatsApp is the dominant messaging platform in India — 500M+ users",
+          "Very cost-effective for marketing vs SMS",
+          "Rich media and interactive templates perform extremely well"
+        ],
+        "gotchas": [
+          "Indian WhatsApp users report spam aggressively — quality messaging essential",
+          "Business verification requires Indian business documentation"
+        ]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing"],
+        "registration_required": true,
+        "registration_body": "Google RBM + Airtel/Jio/Vodafone-Idea",
+        "registration_timeline_days": [21, 60],
+        "cost_per_message_usd": [0.01, 0.025],
+        "notes": [
+          "Growing RCS support — Airtel and Jio have significant RCS deployments",
+          "RCS can bypass some DLT complexity for certain use cases"
+        ],
+        "gotchas": [
+          "Carrier RCS support is uneven — always have SMS DLT fallback in place"
+        ]
+      }
+    },
+    "compliance": {
+      "framework": "TRAI Regulations + IT Act + PDPB (upcoming)",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "India (data localisation requirements evolving)",
+      "regulator": "TRAI + MeitY"
+    },
+    "market_notes": "India has the most complex SMS registration in the world (DLT). However, WhatsApp is transformative here — the most cost-effective way to reach Indian consumers at scale. Budget 3 weeks for DLT; 2 weeks for WhatsApp. Never skip NDNC checks."
+  },
+
+  "BR": {
+    "name": "Brazil",
+    "flag": "🇧🇷",
+    "region": "Americas",
+    "population": 215,
+    "gdp_tier": "medium",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "alerts"],
+        "sender_types": ["longcode", "shortcode"],
+        "alphanumeric_supported": false,
+        "longcode_supported": true,
+        "shortcode_supported": true,
+        "registration_required": false,
+        "registration_timeline_days": [1, 7],
+        "cost_per_message_usd": [0.02, 0.045],
+        "notes": [
+          "Alphanumeric sender IDs not supported — local long codes or shortcodes",
+          "LGPD (Brazil's GDPR equivalent) applies — consent records required",
+          "SMS open rates high but spam filtering increasing"
+        ],
+        "gotchas": [
+          "Brazilian carriers aggressively filter A2P traffic — local number strongly preferred",
+          "Marketing hours: 08:00–20:00 local time — no weekend evening sends",
+          "ANATEL (regulator) has been increasing enforcement"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["marketing", "support", "otp"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 10],
+        "cost_per_message_usd": [0.008, 0.015],
+        "notes": [
+          "Brazil is one of WhatsApp's largest markets — 120M+ users, ~90% smartphone penetration",
+          "WhatsApp is the PRIMARY business communication channel in Brazil",
+          "WhatsApp Pay is active — commerce integration possible"
+        ],
+        "gotchas": [
+          "Brazilian consumers expect fast, conversational WhatsApp replies — slow response = blocked",
+          "Meta Business Verification may require Brazilian CNPJ business registration"
+        ]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["alerts", "marketing"],
+        "registration_required": true,
+        "registration_body": "Google RBM + Claro/Vivo/TIM",
+        "registration_timeline_days": [14, 45],
+        "cost_per_message_usd": [0.02, 0.04],
+        "notes": ["RCS growing in Brazil — Vivo and Claro have active RCS deployments"],
+        "gotchas": ["WhatsApp so dominant in Brazil that RCS ROI is lower — assess per use case"]
+      }
+    },
+    "compliance": {
+      "framework": "LGPD + ANATEL regulations",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "SAIR",
+      "data_residency": "Brazil preferred",
+      "regulator": "ANPD + ANATEL"
+    },
+    "market_notes": "Brazil = WhatsApp first, always. WhatsApp is how Brazilians communicate with businesses. SMS is secondary — useful for OTP and alerts but not the primary marketing channel. If you only do one thing in Brazil, set up WhatsApp Business."
+  },
+
+  "ES": {
+    "name": "Spain",
+    "flag": "🇪🇸",
+    "region": "Europe",
+    "population": 47,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "marketing", "alerts"],
+        "sender_types": ["alphanumeric", "shortcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": false,
+        "shortcode_supported": true,
+        "registration_required": false,
+        "registration_timeline_days": [1, 7],
+        "cost_per_message_usd": [0.055, 0.08],
+        "notes": [
+          "No long codes — alphanumeric or shortcodes",
+          "Relatively straightforward setup vs France/Germany",
+          "GDPR applies"
+        ],
+        "gotchas": [
+          "CNMC (regulator) can impose high fines for GDPR violations",
+          "Marketing hours: 09:00–21:00 weekdays, shorter on weekends",
+          "Spanish carriers increasing spam filtering — content quality matters"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["marketing", "support"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 10],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": [
+          "WhatsApp penetration in Spain is among the highest in Europe (~90%)",
+          "Primary messaging app for both personal and business communication"
+        ],
+        "gotchas": [
+          "Spanish users are highly active on WhatsApp — high expectations for response speed"
+        ]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing"],
+        "registration_required": true,
+        "registration_body": "Google RBM + Movistar/Vodafone ES/Orange ES",
+        "registration_timeline_days": [14, 30],
+        "cost_per_message_usd": [0.04, 0.07],
+        "notes": ["Good carrier RCS support in Spain"],
+        "gotchas": ["WhatsApp dominance means RCS reach is lower — test before scaling"]
+      }
+    },
+    "compliance": {
+      "framework": "GDPR + LSSICE + LOPD-GDD",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "EU required",
+      "regulator": "AEPD + CNMC"
+    },
+    "market_notes": "Spain is one of the easiest EU markets to launch in — simpler registration than France or Germany, high WhatsApp penetration. Good starting market for EU expansion. WhatsApp is the dominant channel."
+  },
+
+  "SE": {
+    "name": "Sweden",
+    "flag": "🇸🇪",
+    "region": "Europe",
+    "population": 10,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "alerts", "marketing"],
+        "sender_types": ["alphanumeric", "shortcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": false,
+        "shortcode_supported": true,
+        "registration_required": false,
+        "registration_timeline_days": [1, 5],
+        "cost_per_message_usd": [0.055, 0.08],
+        "notes": [
+          "Swedish market is relatively simple — no mandatory pre-registration for alphanumeric",
+          "High smartphone penetration, tech-literate consumers",
+          "GDPR applies"
+        ],
+        "gotchas": [
+          "IMY (Privacy regulator) is among EU's most active GDPR enforcers",
+          "Swedish consumers have very low spam tolerance — relevance and personalisation essential"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["support"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 10],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": [
+          "WhatsApp used but iMessage and native SMS are also very strong in Sweden",
+          "B2C WhatsApp is less dominant than in Southern Europe"
+        ],
+        "gotchas": [
+          "Swedes are skeptical of business WhatsApp messages — SMS or RCS may outperform"
+        ]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing", "alerts"],
+        "registration_required": true,
+        "registration_body": "Google RBM + Telia/Tele2/Three",
+        "registration_timeline_days": [7, 21],
+        "cost_per_message_usd": [0.04, 0.07],
+        "notes": ["Strong RCS carrier support in Sweden — Telia was early adopter"],
+        "gotchas": []
+      }
+    },
+    "compliance": {
+      "framework": "GDPR + LEK (Lag om elektronisk kommunikation)",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "EU required",
+      "regulator": "IMY + PTS"
+    },
+    "market_notes": "Sweden is a clean, uncomplicated market to launch in. Low friction, high tech adoption. RCS performs well. IMY is aggressive on GDPR — document consent properly."
+  },
+
+  "NL": {
+    "name": "Netherlands",
+    "flag": "🇳🇱",
+    "region": "Europe",
+    "population": 17,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "alerts", "marketing"],
+        "sender_types": ["alphanumeric", "shortcode", "longcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": true,
+        "shortcode_supported": true,
+        "registration_required": false,
+        "registration_timeline_days": [1, 5],
+        "cost_per_message_usd": [0.055, 0.08],
+        "notes": [
+          "One of the most flexible EU markets — long codes, shortcodes, and alphanumeric all available",
+          "AWS expanded self-service registration to Netherlands in 2025",
+          "GDPR applies"
+        ],
+        "gotchas": [
+          "AP (Autoriteit Persoonsgegevens) is active GDPR enforcer",
+          "Telemarketing Do Not Call register (Bel-me-niet register) applies to voice — check for SMS equivalent"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["marketing", "support"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 10],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": ["WhatsApp widely used in Netherlands"],
+        "gotchas": []
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing"],
+        "registration_required": true,
+        "registration_body": "Google RBM + KPN/T-Mobile NL/Vodafone NL",
+        "registration_timeline_days": [7, 21],
+        "cost_per_message_usd": [0.04, 0.07],
+        "notes": ["Good RCS support across Dutch carriers"],
+        "gotchas": []
+      }
+    },
+    "compliance": {
+      "framework": "GDPR + Telecommunicatiewet",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "EU required",
+      "regulator": "AP + ACM"
+    },
+    "market_notes": "Netherlands is a strong, flexible market. Good mix of channels available. English is widely spoken — less localisation friction than France or Germany."
+  },
+
+  "AU": {
+    "name": "Australia",
+    "flag": "🇦🇺",
+    "region": "Asia-Pacific",
+    "population": 26,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "marketing", "alerts"],
+        "sender_types": ["alphanumeric", "shortcode", "longcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": true,
+        "shortcode_supported": true,
+        "registration_required": true,
+        "registration_body": "ACMA Sender ID Registration",
+        "registration_timeline_days": [7, 21],
+        "cost_per_message_usd": [0.055, 0.085],
+        "notes": [
+          "ACMA introduced Sender ID registration in 2023 to combat scam SMS",
+          "Unregistered sender IDs increasingly blocked by Australian carriers",
+          "AWS added self-service Australia registration in 2025"
+        ],
+        "gotchas": [
+          "Spam Act 2003 carries fines up to AUD$2.2M per day for non-compliance",
+          "Must include a functional unsubscribe mechanism in every marketing message",
+          "Registered sender IDs get priority delivery — unregistered traffic is deprioritised"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["support"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 14],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": ["WhatsApp less dominant in Australia than EU/LATAM — iMessage and SMS are stronger"],
+        "gotchas": ["Low WhatsApp penetration relative to population — verify audience before investing"]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing", "alerts"],
+        "registration_required": true,
+        "registration_body": "Google RBM + Telstra/Optus/Vodafone AU",
+        "registration_timeline_days": [14, 30],
+        "cost_per_message_usd": [0.04, 0.075],
+        "notes": ["Growing RCS adoption in Australia — Telstra has active RCS deployment"],
+        "gotchas": []
+      }
+    },
+    "compliance": {
+      "framework": "Spam Act 2003 + Privacy Act 1988",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "Australia preferred",
+      "regulator": "ACMA + OAIC"
+    },
+    "market_notes": "Australia has one of the highest compliance cost environments. The Spam Act has real teeth — AUD$2.2M/day fines are enforced. Sender ID registration is now effectively mandatory. Strong SMS market despite high costs."
+  },
+
+  "SG": {
+    "name": "Singapore",
+    "flag": "🇸🇬",
+    "region": "Asia-Pacific",
+    "population": 5.6,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "alerts", "marketing"],
+        "sender_types": ["alphanumeric", "shortcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": false,
+        "shortcode_supported": true,
+        "registration_required": true,
+        "registration_body": "SSIR (Singapore SMS Sender ID Registry)",
+        "registration_timeline_days": [3, 14],
+        "cost_per_message_usd": [0.04, 0.07],
+        "notes": [
+          "Singapore launched mandatory SSIR in 2023 — all sender IDs must be registered",
+          "Unregistered sender IDs displayed as 'Likely-SCAM' by carriers",
+          "IMDA oversees the registry — high enforcement"
+        ],
+        "gotchas": [
+          "CRITICAL: Unregistered sender IDs flagged as SCAM — this will destroy campaign performance",
+          "PDPA requires explicit opt-in for marketing messages",
+          "Singapore is a regional hub — many brands send from SG to broader APAC",
+          "Registration processing: 3–5 business days typically"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["support", "marketing"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 10],
+        "cost_per_message_usd": [0.01, 0.02],
+        "notes": ["WhatsApp widely used in Singapore — strong business messaging channel"],
+        "gotchas": []
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing"],
+        "registration_required": true,
+        "registration_body": "Google RBM + Singtel/StarHub/M1",
+        "registration_timeline_days": [7, 21],
+        "cost_per_message_usd": [0.03, 0.06],
+        "notes": ["Singapore has strong RCS support — tech-forward market"],
+        "gotchas": []
+      }
+    },
+    "compliance": {
+      "framework": "PDPA + SPAM Control Act",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "Singapore",
+      "regulator": "IMDA + PDPC"
+    },
+    "market_notes": "Singapore is the gateway to APAC. Strict but fast registration (SSIR). A tech-forward, wealthy market with strong RCS and WhatsApp adoption. If you're expanding in Asia, Singapore is often the first stop."
+  },
+
+  "FI": {
+    "name": "Finland",
+    "flag": "🇫🇮",
+    "region": "Europe",
+    "population": 5.5,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "alerts", "marketing"],
+        "sender_types": ["alphanumeric", "shortcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": false,
+        "shortcode_supported": true,
+        "registration_required": true,
+        "registration_body": "Traficom",
+        "registration_timeline_days": [7, 21],
+        "cost_per_message_usd": [0.06, 0.085],
+        "notes": [
+          "Traficom maintains a protected sender ID list — if your name matches, LOA required",
+          "Gambling and lottery content is STRICTLY PROHIBITED — not just restricted",
+          "AWS added self-service Finland registration in 2025",
+          "GDPR + Finnish Information Society Code applies"
+        ],
+        "gotchas": [
+          "If your brand name matches a protected name on Traficom's list, you need a Letter of Authority AND a Numbering Decision — adds weeks",
+          "Absolutely no gambling/lottery content — this is a hard ban, not a licensing issue"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["support"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 10],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": ["WhatsApp used but SMS and native messaging stronger in Finland"],
+        "gotchas": []
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing"],
+        "registration_required": true,
+        "registration_body": "Google RBM + Elisa/Telia FI/DNA",
+        "registration_timeline_days": [7, 21],
+        "cost_per_message_usd": [0.04, 0.07],
+        "notes": ["Good RCS support in Finland"],
+        "gotchas": []
+      }
+    },
+    "compliance": {
+      "framework": "GDPR + Finnish Information Society Code",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "EU required",
+      "regulator": "Traficom + Tietosuojavaltuutettu"
+    },
+    "market_notes": "Finland is a small but high-value market. Traficom is strict — check the protected sender name list before starting. Gambling content is completely banned. Otherwise a straightforward Nordic market."
+  },
+
+  "IT": {
+    "name": "Italy",
+    "flag": "🇮🇹",
+    "region": "Europe",
+    "population": 59,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "marketing", "alerts"],
+        "sender_types": ["alphanumeric", "shortcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": false,
+        "shortcode_supported": true,
+        "registration_required": false,
+        "registration_timeline_days": [1, 7],
+        "cost_per_message_usd": [0.055, 0.08],
+        "notes": [
+          "No mandatory pre-registration but carrier filtering is aggressive",
+          "AWS added self-service Italy registration in 2025 — recommended to register",
+          "GDPR applies + Garante Privacy (one of EU's most active regulators)"
+        ],
+        "gotchas": [
+          "Garante has issued major GDPR fines — consent documentation is essential",
+          "Marketing hours: 09:00–20:00 Monday–Saturday only",
+          "No Sunday marketing SMS",
+          "Italian carriers filter aggressively — content quality and registered IDs important"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["marketing", "support"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 10],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": ["WhatsApp widely used in Italy — strong business messaging channel"],
+        "gotchas": ["Italian businesses often prefer voice calls — WhatsApp messaging requires cultural calibration"]
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing"],
+        "registration_required": true,
+        "registration_body": "Google RBM + TIM/Vodafone IT/WindTre",
+        "registration_timeline_days": [14, 30],
+        "cost_per_message_usd": [0.04, 0.07],
+        "notes": ["AWS added Italy to self-service RCS/SMS in 2025 — improving"],
+        "gotchas": []
+      }
+    },
+    "compliance": {
+      "framework": "GDPR + Codice del Consumo + ePrivacy",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "EU required",
+      "regulator": "Garante + AGCOM"
+    },
+    "market_notes": "Italy is a high-value market with an active privacy regulator (Garante). Strict marketing hours. WhatsApp is strong. The Garante issues meaningful fines — treat consent as seriously as in Germany."
+  },
+
+  "DK": {
+    "name": "Denmark",
+    "flag": "🇩🇰",
+    "region": "Europe",
+    "population": 5.9,
+    "gdp_tier": "high",
+    "channels": {
+      "sms": {
+        "available": true,
+        "recommended_for": ["otp", "alerts", "marketing"],
+        "sender_types": ["alphanumeric", "shortcode"],
+        "alphanumeric_supported": true,
+        "longcode_supported": false,
+        "shortcode_supported": true,
+        "registration_required": true,
+        "registration_body": "Danish Business Authority",
+        "registration_timeline_days": [5, 14],
+        "cost_per_message_usd": [0.055, 0.08],
+        "notes": [
+          "Registration since April 7, 2025 is mandatory — unregistered IDs blocked",
+          "Sender IDs cannot contain 'TEST', 'MESSAGE', 'SMS', or carrier names",
+          "AWS added self-service Denmark registration in 2025"
+        ],
+        "gotchas": [
+          "CRITICAL: Registration became mandatory April 7 2025 — unregistered traffic is now blocked",
+          "Forbidden words in sender IDs: TEST, MESSAGE, SMS, carrier names (SMART, SUN etc.)",
+          "Shortened URLs prohibited in Denmark"
+        ]
+      },
+      "whatsapp": {
+        "available": true,
+        "recommended_for": ["support"],
+        "registration_required": true,
+        "registration_body": "Meta Business Verification",
+        "registration_timeline_days": [3, 10],
+        "cost_per_message_usd": [0.015, 0.025],
+        "notes": ["WhatsApp used but SMS and native messaging also strong"],
+        "gotchas": []
+      },
+      "rcs": {
+        "available": true,
+        "recommended_for": ["marketing"],
+        "registration_required": true,
+        "registration_body": "Google RBM + TDC/Telenor DK/Telia DK",
+        "registration_timeline_days": [7, 21],
+        "cost_per_message_usd": [0.04, 0.07],
+        "notes": ["Good Nordic RCS support"],
+        "gotchas": []
+      }
+    },
+    "compliance": {
+      "framework": "GDPR + Markedsføringsloven",
+      "opt_in_required": true,
+      "opt_in_type": "explicit",
+      "opt_out_keyword": "STOP",
+      "data_residency": "EU required",
+      "regulator": "Datatilsynet + Erhvervsstyrelsen"
+    },
+    "market_notes": "Denmark went mandatory on SMS sender registration in April 2025 — a recent change that many international senders miss. Do not attempt unregistered alphanumeric IDs. Small but high-value market."
+  }
+}
