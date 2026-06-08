@@ -79,9 +79,15 @@ function buildStepsForChannel(
   const ch = country.channels[channelId]
   if (!ch || !ch.available) return []
 
+  const chData = ch as {
+    registration_required?: boolean
+    registration_body?: string
+    registration_timeline_days?: [number, number]
+  }
+
   const steps: PlanStep[] = []
-  const reg = ch.registration_required ?? false
-  const timeline = ch.registration_timeline_days as [number, number] | undefined
+  const reg = chData.registration_required ?? false
+  const timeline = chData.registration_timeline_days as [number, number] | undefined
   const minDays = timeline?.[0] ?? 1
   const maxDays = timeline?.[1] ?? 7
 
@@ -101,8 +107,8 @@ function buildStepsForChannel(
   })
 
   // Step 2: Registration (if required)
-  if (reg && ch.registration_body) {
-    const body = ch.registration_body as string
+  if (reg && chData.registration_body) {
+    const body = chData.registration_body as string
     steps.push({
       week: minDays <= 7 ? 'Week 1' : 'Week 1–2',
       title: `Register with ${body}`,
@@ -188,7 +194,8 @@ function buildRegistrationDescription(
   }
 
   if (channelId === 'rcs') {
-    return `Submit RCS agent registration to ${body}. This involves Google RBM review plus separate carrier-level approval in ${country.name}. Total timeline is ${country.channels.rcs?.registration_timeline_days?.[0] ?? 14}–${country.channels.rcs?.registration_timeline_days?.[1] ?? 45} days. Prepare: brand logo, verified business website, use case description, and 5 sample messages.`
+    const rcs = country.channels.rcs as { registration_timeline_days?: [number, number] } | undefined
+    return `Submit RCS agent registration to ${body}. This involves Google RBM review plus separate carrier-level approval in ${country.name}. Total timeline is ${rcs?.registration_timeline_days?.[0] ?? 14}–${rcs?.registration_timeline_days?.[1] ?? 45} days. Prepare: brand logo, verified business website, use case description, and 5 sample messages.`
   }
 
   return `Complete registration with ${body}.`
@@ -223,9 +230,8 @@ function buildConsentDescription(
   useCase: (typeof useCasesData)[UseCaseId]
 ): string {
   const framework = country.compliance.framework
-  const needsDouble = useCase.requires_double_optin?.includes(
-    Object.entries(countriesData).find(([, v]) => v === country)?.[0] ?? ''
-  )
+  const countryKey = Object.entries(countriesData).find(([, v]) => v === country)?.[0] ?? ''
+  const needsDouble = (useCase.requires_double_optin as string[])?.includes(countryKey)
 
   if (needsDouble) {
     return `${country.name} requires double opt-in (DOI) for marketing messages under ${framework}. Build a two-step consent flow: (1) initial opt-in (form/checkbox), (2) confirmation SMS or email. Store timestamped consent records — these must be producible on request by ${country.compliance.regulator}.`
@@ -249,7 +255,7 @@ function buildConsentBlockers(
     'Opt-in copy written and reviewed',
     'Consent storage implemented (timestamp + source)',
     'Opt-out mechanism live (STOP keyword)',
-    useCase.requires_double_optin?.includes(Object.entries(countriesData).find(([, v]) => v === country)?.[0] ?? '')
+    (useCase.requires_double_optin as string[])?.includes(Object.entries(countriesData).find(([, v]) => v === country)?.[0] ?? '')
       ? 'Double opt-in flow built and tested'
       : 'Opt-in flow live on your platform'
   ]
@@ -267,11 +273,13 @@ function calculateReadinessScore(country: (typeof countriesData)[CountryCode], c
   const ch = country.channels[channelId]
   if (!ch || !ch.available) return 0
 
+  const chData = ch as { registration_required?: boolean; registration_timeline_days?: [number, number]; gotchas?: string[] }
+
   let score = 100
-  const reg = ch.registration_required ?? false
-  const timeline = ch.registration_timeline_days as [number, number] | undefined
+  const reg = chData.registration_required ?? false
+  const timeline = chData.registration_timeline_days
   const maxDays = timeline?.[1] ?? 7
-  const gotchas = (ch.gotchas as string[] | undefined) ?? []
+  const gotchas = chData.gotchas ?? []
 
   if (reg) score -= 20
   if (maxDays > 14) score -= 10
